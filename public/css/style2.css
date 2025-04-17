@@ -481,11 +481,12 @@
     top: 0;
     left: -12px;
     overflow: hidden;
-    background: linear-gradient(
+    /*background: linear-gradient(
       0deg,
       rgba(247, 247, 247, 1) 0%,
       rgba(247, 247, 247, 1) 100%
-    );
+    );*/
+    background-image: url(/public/img/logo.webp);
   }
   
   .landing-page .overlap-group-2 {
