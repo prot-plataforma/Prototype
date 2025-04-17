@@ -496,6 +496,11 @@
     top: 0;
     left: -12px;
     overflow: hidden;
+    background-color: emerald;
+    background-clip: padding-box;
+    backdrop-filter: blur(8px) saturate(50%) contrast(100%);
+    opacity: 100%;;
+    
     background: linear-gradient(to right, #fef08a, #84cc16, #16a34a);
   }
   
