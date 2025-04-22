@@ -172,9 +172,8 @@
      color: var(--primary-yellow);
      background-color: rgba(0, 0, 0, 0.1);
    }
+   
    /*-----Botão de Login com Animação-----*/
-  
-
 .login-btn {
      display: inline-block;
      padding: 12px 30px;
@@ -489,7 +488,69 @@
    ---------------------------------------------------------------------*/
    .product {
      padding: 80px 0;
+     background-color: var(--primary-green);
    }
+   .platform-header {
+     text-align: center;
+     margin-bottom: 40px;
+ }
+ .platform-header h2 {
+     font-size: 2.3rem;
+     color: var(--white);
+     margin-bottom: 10px;
+ }
+ 
+ .platform-header h2 span {
+     color: #FFC107;
+ }
+ 
+ .platform-subtitle {
+     color: var(--black);
+     font-size: 1.1rem;
+     max-width: 700px;
+     margin: 0 auto;
+ }
+ 
+ .platform-container {
+     padding: 0 15px;
+ }
+ 
+ .platform-card {
+     position: relative;
+     border-radius: 8px;
+     overflow: hidden;
+     margin-bottom: 20px;
+     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+     transition: all 0.3s ease;
+     height: 520px;
+ }
+ 
+ .platform-card img {
+     width: 100%;
+     height: 100%;
+   
+     transition: transform 0.5s ease;
+ }
+ 
+ .platform-card:hover {
+     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+ }
+ 
+ .platform-card:hover img {
+     transform: scale(1.05);
+ }
+ 
+ .card-content {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+     color: white;
+     padding: 20px;
+ }
+ 
+ 
    
    .title h2 {
      color: var(--primary-green);
@@ -509,32 +570,7 @@
      height: 3px;
      background-color: var(--primary-yellow);
    }
-   
-   /*--------------------------------------------------------------------- 
-     Depoimentos 
-   ---------------------------------------------------------------------*/
-   .clients {
-     padding: 80px 0;
-     background-color: #f9f9f9;
-   }
-   
-   .testimonial_cont {
-     background-color: var(--white);
-     padding: 30px;
-     border-radius: 8px;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-   }
-   
-   .testomonial_img img {
-     border-radius: 50%;
-     border: 5px solid var(--light-green);
-     max-width: 150px;
-   }
-   
-   .ornage_color {
-     color: var(--primary-yellow);
-   }
-   
+    
    /*--------------------------------------------------------------------- 
      Contato 
    ---------------------------------------------------------------------*/
