@@ -1,147 +1,480 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<html lang="en">
 
-    <link rel="stylesheet" href="/public/css/global.css" />
-    <link rel="stylesheet" href="/public/css/styleguide.css" />
-    <link rel="stylesheet" href="/public/css/style2.css" />
-  </head>
-  <body>
-    <div class="landing-page">
-      <!-- Cabeçalho -->
-      <div class="header-with-image">
-        <div class="overlap-group-2">
-          <div class="dimmer">
-            <div class="navigation">
-              <div class="items-2">
-                <div class="text-wrapper-10"><a href="#sobre">Sobre</a></div>
-                <div class="text-wrapper-10"><a href="#plataforma">Plataforma</a></div>
-                <div class="text-wrapper-10"><a href="#obj">Objetivo</a></div>
-                <button class="rotate-top-normal"><div class="text-wrapper-11">LOGIN</div></button>
-              </div>
-              <div class="text-wrapper-12">GeoFarm</div>
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>GeoFarm</title>
+    
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="public/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="public/css/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="public/css/jquery.mCustomScrollbar.min.css">
+
+</head>
+<!-- body -->
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="index.html"><img src="public/img/4.png" alt="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="location_icon_bottum_tt">
+                            <ul>
+                                <li><img src="public/icon/email1.png" />geofarm@gmail.com</li>
+
+                                <li><img src="public/icon/call1.png" />(53)9876543109</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 location_icon_bottum">
+                       <div class="row">
+                            <div class="col-md-8 ">
+                                <div class="menu-area">
+                                    <div class="limit-box">
+                                        <nav class="main-menu">
+                                            <ul class="menu-area-main">                         
+                                                <li> <a href="#about">Sobre</a> </li>
+                                                <li><a href="#objetivo">Objetivos</a></li>
+                                                <li><a href="#plataforma">Plataforma</a></li>
+                                                <li><a href="#contact">Contact Us</a></li>
+                                                <li><a href="login.html" class="login-btn scale-up-tr-normal">LOGIN</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                       </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="div-wrapper">
-            <div class="page-title-2">
-              <div class="text-wrapper-13">Capa da Page</div>
-              <p class="text-wrapper-14">Subheading with description of your shopping site</p>
+        </div>
+        <!-- end header inner -->
+    </header>
+    <!-- end header -->
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="public/img/farm1.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>GeoFarm</h1>
+                            <span>FARMING COMPANY</span>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="public/img/farm2.jpg" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>GeoFarm</h1>
+                            <span>FARMING COMPANY</span>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="public/img/farm3.jpg" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>GeoFarm</h1>
+                            <span>FARMING COMPANY</span>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+                            
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
         </div>
-      </div>
+    </section>
 
-      <!-- Hero Image -->
-      <div class="hero-image"><img src="/public/img/digital-36653.jpg" alt=""></div>
 
-      <!-- Sobre -->
-      <div class="page-title-wrapper">
-        <div class="page-title">
-          <div class="text-wrapper-9" id="sobre">Sobre</div>
-          <p class="lorem-ipsum-dolor">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue dui a nisl rutrum volutpat. Aliquam
-            cursus, orci ut ullamcorper eleifend,&nbsp;&nbsp;dolor justo porta metus, quis egestas lacus nunc vitae
-            orci. Donec ut&nbsp;&nbsp;erat eget odio faucibus ornare. <br /><br />Cras malesuada felis non lacus
-            suscipit, at dapibus justo placerat. Cras justo orci, congue vitae sapien nec,&nbsp;&nbsp;condimentum
-            gravida est. Integer non rutrum felis, id ullamcorper velit. Integer porta rutrum est in feugiat. Aenean
-            scelerisque fringilla&nbsp;&nbsp;magna, in cursus felis pulvinar vitae.<br /><br />Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Sed congue dui a nisl rutrum volutpat. Aliquam cursus, orci ut
-            ullamcorper eleifend,&nbsp;&nbsp;dolor justo porta metus, quis egestas lacus nunc vitae orci. Donec
-            ut&nbsp;&nbsp;erat eget odio faucibus ornare. Cras malesuada felis non lacus suscipit, at dapibus justo
-            placerat. <br /><br /><br />Cras justo orci, congue vitae sapien nec,&nbsp;&nbsp;condimentum gravida est.
-            Integer non rutrum felis, id ullamcorper velit. Integer porta rutrum est in feugiat. Aenean scelerisque
-            fringilla&nbsp;&nbsp;magna, in cursus felis pulvinar vitae.
-          </p>
-        </div>
-      </div>
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
 
-      <div class="cards-2">
-        <div class="image-wrapper"><div class="image-7"></div></div>
-        <div class="image-wrapper"><div class="image-8"></div></div>
-      </div>
-
-      <!-- Plataforma -->
-      <div class="text-wrapper-3" id="plataforma">Plataforma e descrição</div>
-      <div class="frame">
-        <div class="card">
-          <div class="image"></div>
-          <div class="copy">
-            <div class="text-wrapper-4">Subheading</div>
-            <p class="p">Body text for whatever you’d like to add more to the subheading.</p>
-          </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>Sobre a GeoFarm<br><span>Analises da sua Fazenda</span></h2>
+                        <p>
+                          dolor sit amet, consectetur adipiscing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                          nisi ut aliquip ex dolor sit amet, consectetur adipiscing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                          nisi ut aliquip ex
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="public/img/farm5.jpg" alt="img" /></figure>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-2">
-          <div class="image-2"></div>
-          <div class="copy">
-            <div class="text-wrapper-4">Subheading</div>
-            <p class="p">Body text for whatever you’d like to expand on the main point.</p>
-          </div>
-        </div>
-        <div class="card-2">
-          <div class="image-3"></div>
-          <div class="copy">
-            <div class="text-wrapper-4">Subheading</div>
-            <p class="p">Body text for whatever you’d like to share more.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Objetivo -->
-      <div class="overlap">
-        <div class="overlap-group">
-          <div class="image-4"></div>
-          <div class="text-wrapper-5" id="obj">Objetivo da Empresa</div>
-        </div>
-        <div class="text">
-          <div class="text-2">
-            <div class="text-wrapper-6">Subheading</div>
-            <p class="text-wrapper-7">Body text for whatever you’d like to expand on the main point.</p>
-          </div>
-          <div class="text-2">
-            <div class="text-wrapper-6">Subheading</div>
-            <p class="text-wrapper-7">
-              Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes.
-            </p>
-          </div>
-          <div class="text-2">
-            <div class="text-wrapper-4">Subheading</div>
-            <p class="p">
-              Body text for whatever you’d like to add more to the main point. It provides details, explanations, and
-              context.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Galeria -->
-      <div class="text-wrapper-8">Galeria de Imagens</div>
-      <div class="cards">
-        <div class="image-wrapper"><div class="image-5"></div></div>
-        <div class="image-wrapper"><div class="image-6"></div></div>
-      </div>
-
-      <!-- Rodapé -->
-      <div class="navigation-footer">
-        <div class="items">
-          <div class="text-wrapper">Topic</div>
-          <div class="div">Sobre</div>
-          <div class="div">Plataforma</div>
-          <div class="div">Contato</div>
-        </div>
-        <div class="text-wrapper-2">GeoFarm</div>
-        <div class="social-icons">
-          <div class="buttons-icon">
-            <div class="icon"><img class="img" src="/public/img/linkedin-brands.svg" /></div>
-          </div>
-          <!--<div class="buttons-icon">
-            <div class="icon"><img class="icon-2" src="img/icon.svg" /></div>
-          </div>
-        </div>
-        <img class="divider" src="img/divider.svg" />
-      </div> -->
     </div>
-  </body>
+    <!-- end about -->
+
+    <!-- Objetivos -->
+    <!-- Seção de Objetivos -->
+<section id="objetivos" class="objetivos-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nossos <span>Objetivos</span></h2>
+            <p class="section-subtitle">Conheça as metas que guiam nosso trabalho diário</p>
+        </div>
+        
+        <div class="objetivos-grid">
+            <!-- Objetivo 1 -->
+            <div class="objetivo-card">
+                <div class="card-icon">
+                    <img src="public/icon/agro1.svg" alt="Ícone Agricultura" />
+                </div>
+                <h3>Sustentabilidade Agrícola</h3>
+                <div class="card-image">
+                    <img src="public/img/img_5terre.jpg" alt="Agricultura sustentável" class="img-fluid" />
+                </div>
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                    <ul class="benefits-list">
+                        <li>LORE IPSUM</li>
+                        <li>LORE IPSUM</li>
+                        <li>LORE IPSUM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Objetivo 2 -->
+            <div class="objetivo-card featured">
+                <div class="card-icon">
+                    <img src="public/icon/trator2.svg" alt="Ícone Inovação" />
+                </div>
+                <h3>Inovação Tecnológica</h3>
+                <div class="card-image">
+                    <img src="public/img/img_forest.jpg" alt="Inovação tecnológica" class="img-fluid" />
+                </div>
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                    <ul class="benefits-list">
+                        <li>LOREM IPSUM</li>
+                        <li>LOREM IPSUM</li>
+                        <li>LOREM IPSUM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Objetivo 3 -->
+            <div class="objetivo-card">
+                <div class="card-icon">
+                    <img src="public/icon/cow3.svg" alt="Ícone Comunidade" />
+                </div>
+                <h3>Desenvolvimento Comunitário</h3>
+                <div class="card-image">
+                    <img src="public/img/img_lights.jpg" alt="Desenvolvimento comunitário" class="img-fluid" />
+                </div>
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                    <ul class="benefits-list">
+                        <li>LOREM IPSUM</li>
+                        <li>LOREM IPSUM</li>
+                        <li>LOREM IPSUM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn-saiba-mais">
+                Saiba mais sobre nossos objetivos
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- end offer -->
+
+    <!-- product -->
+    <div id="product" class="product">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>GeoFarm <strong class="black"> Plataforma</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="public/img/img_5terre.jpg" alt="#" />
+                                    <h3>Area 1</h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="public/img/img_forest.jpg" alt="#" />
+                                    <h3>Area 2 </h3>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="public/img/img_lights.jpg" alt="#" />
+                                    <h3>Area 3 </h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="public/img/img_mountains.jpg" alt="#" />
+                                    <h3>Area 4</h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="public/img/digital-36653.jpg" alt="#" />
+                                    <h3>Area 5</h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- end product -->
+   
+    <!-- clients -->
+    <!-- Seção de Imagens -->
+<div id="gallery" class="image-gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>Nossa Galeria</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-carousel">
+        <div class="container">
+            <div id="image_carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#image_carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#image_carousel" data-slide-to="1"></li>
+                    <li data-target="#image_carousel" data-slide-to="2"></li>
+                </ul>
+                
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="public/img/images.jpeg" alt="Imagem 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="public/img/img_5terre.jpg" alt="Imagem 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="public/img/img_forest.jpg" alt="Imagem 3" class="d-block w-100">
+                    </div>
+                </div>
+                
+                <!-- Controles -->
+                <a class="carousel-control-prev" href="#image_carousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#image_carousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    <!-- end clients -->
+    <!-- contact -->
+
+    <div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Entre em <strong class="black"> Contato</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padddd">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
+            <div class="map_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                            <form class="main_form">
+                                <div class="row">
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Name" type="text" name="Name">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Email" type="text" name="Email">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button class="send">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="map">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- end contact -->
+
+    <!-- footer -->
+    <!--  footer -->
+    <footr>
+        <div class="footer top_layer ">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <a href="index.html"> <img src="public/img/logo.webp" alt="logo" /></a>
+                            <p>
+                                dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et sdolor sit amet, consectetur adipiscing elit
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <h3>Contact Us</h3>
+
+                            <ul class="loca">
+                                    <a href="#"><img src="public/icon/email.png" alt="#" /></a>geofarm@gmail.com</li>
+                                <li>
+                                    <a href="#"><img src="public/icon/call.png" alt="#" /></a>00000000000000 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <div class="copyright">
+            <div class="container">
+                <p>© </a></p>
+           
+        </div>
+        </div>
+    </footr>
+
+    <!-- end footer -->
+    
+    <!-- Javascript files-->
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/popper.min.js"></script>
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/jquery-3.0.0.min.js"></script>
+    <script src="public/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="public/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="public/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="public/js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+
+            $(".zoom").hover(function() {
+
+                $(this).addClass('transition');
+            }, function() {
+
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+</body>
+
 </html>
