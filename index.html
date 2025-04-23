@@ -175,6 +175,7 @@
         </div>
         
         <div class="objetivos-grid">
+            
             <!-- Objetivo 1 -->
             <div class="objetivo-card">
                 <div class="card-icon">
@@ -215,8 +216,9 @@
             
             <!-- Objetivo 3 -->
             <div class="objetivo-card">
+                
                 <div class="card-icon">
-                    <img src="public/icon/cow3.svg" alt="Ícone Comunidade" />
+                    <img src="public/icon/cow3.svg" alt="icon1" />
                 </div>
                 <h3>Desenvolvimento Comunitário</h3>
                 <div class="card-image">
@@ -231,13 +233,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="text-center mt-5">
-            <a href="#" class="btn-saiba-mais">
-                Saiba mais sobre nossos objetivos
-                <i class="fas fa-chevron-right"></i>
-            </a>
         </div>
     </div>
 </section>
@@ -312,50 +307,83 @@
     <!-- end product -->
 
     <!-- Seção de Imagens -->
-<div id="gallery" class="image-gallery">
+<!-- Galeria -->
+<section id="gallery" class="carousel-gallery">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title">
-                    <h2>Nossa Galeria</h2>
-                </div>
-            </div>
+        <div class="section-header text-center">
+            <h2 class="section-title">Nossa <span class="highlight">Galeria</span></h2>
+            <p class="section-subtitle">Explore nossos momentos e trabalhos em detalhes</p>
         </div>
     </div>
-    <div class="gallery-carousel">
-        <div class="container">
-            <div id="image_carousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#image_carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#image_carousel" data-slide-to="1"></li>
-                    <li data-target="#image_carousel" data-slide-to="2"></li>
-                </ul>
+
+    <div class="gallery-container">
+        <!-- Carrossel Principal -->
+        <div class="img-carousel">
+            <div id="galleryCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#galleryCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#galleryCarousel" data-slide-to="1"></li>
+                    <li data-target="#galleryCarousel" data-slide-to="2"></li>
+                </ol>
                 
                 <!-- Slides -->
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="public/img/images.jpeg" alt="Imagem 1" class="d-block w-100">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" data-category="nature">
+                        <div class="image-container">
+                            <img src="public/img/images.jpeg" alt="Paisagem Natural" class="img-fluid">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Belezas Naturais</h3>
+                                    <p>Nossas fazendas em harmonia com a natureza</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="public/img/img_5terre.jpg" alt="Imagem 2" class="d-block w-100">
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" data-category="tech">
+                        <div class="image-container">
+                            <img src="public/img/img_5terre.jpg" alt="Tecnologia Agrícola" class="img-fluid">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Inovação Tecnológica</h3>
+                                    <p>Equipamentos de última geração em ação</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="public/img/img_forest.jpg" alt="Imagem 3" class="d-block w-100">
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" data-category="projects">
+                        <div class="image-container">
+                            <img src="public/img/img_forest.jpg" alt="Projetos Sustentáveis" class="img-fluid">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sustentabilidade</h3>
+                                    <p>Nossas iniciativas verdes em destaque</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Controles -->
-                <a class="carousel-control-prev" href="#image_carousel" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                <!-- Controles Personalizados -->
+                <a class="carousel-control-prev" href="#galleryCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
                 </a>
-                <a class="carousel-control-next" href="#image_carousel" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                <a class="carousel-control-next" href="#galleryCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
                 </a>
             </div>
         </div>
-    </div>
-</div>
+        
+        
+</section>
   
     <!-- end clients -->
     <!-- contact -->
@@ -420,7 +448,7 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                         <div class="address">
-                            <a href="index.html"> <img src="public/img/logo.webp" alt="logo" /></a>
+                            <a href="index.html"> <img src="public/img/logo.png" alt="logo" /></a>
                             <p>
                                 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et sdolor sit amet, consectetur adipiscing elit
@@ -432,9 +460,8 @@
                             <h3>Contact Us</h3>
 
                             <ul class="loca">
-                                    <a href="#"><img src="public/icon/email.png" alt="#" /></a>geofarm@gmail.com</li>
-                                <li>
-                                    <a href="#"><img src="public/icon/call.png" alt="#" /></a>00000000000000 </li>
+                                   <li><a href="#"><img src="public/icon/email.png" alt="#" /></a>geofarm@gmail.com</li>
+                                   <li><a href="#"><img src="public/icon/call.png" alt="#" /></a>00000000000000 </li>
                             </ul>
                         </div>
                     </div>
@@ -444,7 +471,7 @@
      
         <div class="copyright">
             <div class="container">
-                <p>© </a></p>
+                <p>© GeoFarm</a></p>
            
         </div>
         </div>
@@ -479,6 +506,14 @@
                 $(this).removeClass('transition');
             });
         });
+
+        // Ativa miniaturas da galeria de imagens
+    document.querySelectorAll('.thumb-item').forEach(thumb => {
+    thumb.addEventListener('click', function() {
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
     </script>
 </body>
 
