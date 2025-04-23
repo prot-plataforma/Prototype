@@ -882,18 +882,24 @@
    /*----------------Contato ---------------*/
    .contact {
      padding: 80px 0;
-     background-color: #f9f9f9;
+     background-color: var(--primary-green);
+   }
+   .title h2{
+    color: var(--white);
+   }
+   .title h2 span{
+    color: var(--dark-yellow);
    }
    
    .main_form {
      background-color: var(--primary-green);
      padding: 40px;
      border-radius: 8px;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 5px 15px rgba(190, 156, 0, 0.863);
    }
    
    .form-control {
-     border: 1px solid var(--light-gray);
+     border: 1px solid var(--dark-yellow);
      border-radius: 4px;
      padding: 12px 15px;
      margin-bottom: 20px;
@@ -924,13 +930,17 @@
      background-color: var(--dark-yellow);
      color: var(--white);
    }
+   .map_section{
+    background-color: var(--primary-green);
+   }
+   
    
    /*-----------------Rodape----------------*/
    .footer {
-     background-color: var(--secondary-green);
-     padding: 60px 0 0;
-     color: var(--white);
-   }
+    background-color: var(--secondary-green);
+    padding: 60px 0 0;
+    color: var(--white);
+  }
    
    .footer a {
      color: var(--white);
