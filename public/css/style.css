@@ -11,6 +11,7 @@
      --black: #212121;
      --gray: #757575;
      --light-gray: #BDBDBD;
+     --span-grenn: rgba(145,207,96);
      
      
      --main-font: 'Poppins', sans-serif;
@@ -106,7 +107,8 @@
    
    /*----------------- Cabeçalho ------------*/
    .header {
-     background-color: var(--secondary-green);
+     background-color: var();
+     background-image: radial-gradient( #d1fb95);
      padding: 15px 0;
      position: sticky;
      top: 0;
@@ -293,18 +295,18 @@
    
    /*------------- Sobre -------------*/
    .about {
-     padding: 80px 0;
+    padding: 80px 0;
     background-color: var(--primary-green);
    }
    
    .about_box h2 {
-     color: var(--white);
+     color: var(--primary-yellow);
      position: relative;
      padding-bottom: 15px;
      margin-bottom: 30px;
    }
    .about_box h2 span{
-     color: var(--primary-yellow);
+     color: var(--white);
    }
    
    .about_box h2:after {
@@ -314,13 +316,30 @@
      left: 0;
      width: 80px;
      height: 3px;
-     background-color: var(--primary-yellow);
+     background-color: var(--span-grenn);
    }
    
    .about_box p {
-     color: var(--black);
+     color: var(--white);
      margin-bottom: 30px;
    }
+   
+   .about_img{
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-green);
+   }
+
+  .about img{   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
    
   /*------------- Objetivos ------------*/
    .objetivos-section {
