@@ -1,15 +1,20 @@
 :root {
      
-  --primary-green: #2E7D32;    
-  --secondary-green: #4CAF50;  
-  --light-green: #8BC34A;      
-  --lime: #CDDC39;             
-  --primary-yellow: #FFEB3B;   
-  --dark-yellow: #FBC02D;      
-  --white: #FFFFFF;
-  --black: #212121;
-  --gray: #757575;
-  --light-gray: #BDBDBD;
+     --primary-green: #2E7D32;    
+     --secondary-green: #4CAF50;  
+     --light-green: #8BC34A;      
+     --lime: #CDDC39;             
+     --primary-yellow:  #7d6608 ;   
+     --dark-yellow: #FBC02D;      
+     --white: #FFFFFF;
+     --black: #212121;
+     --gray: #757575;
+     --light-gray: #BDBDBD;
+     --span-grenn: rgba(145,207,96);
+     --body-green: #49a6;
+     --dark-olive-green: #556B2F;
+     --sea-green:  	#2E8B57;
+     --army-green: #454B1B;
   
   
   --main-font: 'Poppins', sans-serif;
@@ -21,7 +26,7 @@ body {
     min-height: 100vh; 
 }
 .card-body{
-  background-color: var(--secondary-green);
+  background-color: var(--sea-green);
 }
   
 .brand-wrapper {
@@ -37,13 +42,14 @@ body {
     box-shadow: 0 10px 30px 0 var(--black);
     overflow: hidden; }
   .login-card-img {
-      background-image: url(/login/img/farm4.jpg);
+      background-image: url(/login/img/fundo-campo2.jpg);
       border-radius: 0;
       position: absolute;
       width: 100%;
       height: 100%;
       -o-object-fit: cover;
-         object-fit: cover; }
+      object-fit: cover; 
+    }
   .login-card .card-body {
       padding: 85px 60px 60px; }
       @media (max-width: 422px) {
@@ -101,6 +107,15 @@ body {
     .login-card-footer-nav a {
       font-size: 14px;
       color: #919aa3; }
+
+      .btn-google {
+        color: #545454;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px 1px #ddd;
+    }
+    .btn-google:hover {
+        background-color: #f1f1f1;
+    }
   
   /*# sourceMappingURL=login.css.map */
   
