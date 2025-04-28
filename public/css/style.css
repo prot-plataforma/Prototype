@@ -952,11 +952,6 @@
   position: relative;
 }
 
-.footer-links a:hover {
-  color: #FFC107;
-  text-decoration: underline;
-}
-
 .footer-links a::after{
   content: '';
   position: absolute;
