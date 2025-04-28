@@ -112,7 +112,7 @@
    /*----------------- Cabeçalho ------------*/
    .header {
      background-color: var();
-     background-image: url(/public/img/menu-fundo3.jpg);
+     background-image: url(/public/img/menu_footr.png);
      padding: 15px 0;
      position: sticky;
      top: 0;
@@ -301,6 +301,7 @@
    .about {
     padding: 80px 0;
     background-color: var(--sea-green);
+    height: 880px;
    }
    
    .about_box h2 {
@@ -335,8 +336,9 @@
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     width: 100%;
-    height: 100%;
+    height: 600px;
     background-color: var(--sea-green);
+    background-image: url(/public/img/sobre-square-00.png);
    }
 
   .about img{   
@@ -346,7 +348,7 @@
   }
    
   /*------------- Objetivos ------------*/
-   .objetivos-section {
+   .objetivos-section.refined {
     padding: 60px 0;
     background-color: var(--sea-green);
     color: white;
@@ -355,7 +357,7 @@
     width: 100%;
 }
 
-.objetivos-section::before {
+.objetivos-section.refined::before {
     content: "";
     position: absolute;
     top: 0;
@@ -377,7 +379,7 @@
 }
 
 .section-header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); 
+    font-size: clamp(2rem, 4vw, 2.8rem); 
     font-weight: 700;
     margin-bottom: 15px;
     color: white;
@@ -388,17 +390,18 @@
 }
 
 .section-header .section-subtitle {
-    font-size: clamp(1rem, 2vw, 1.2rem); 
+    font-size: clamp(1rem, 2vw, 1.3rem); 
     max-width: 700px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.5;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .objetivos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     position: relative;
     z-index: 1;
     padding: 0 15px;
@@ -407,20 +410,24 @@
 
 .objetivo-card {
     background: white;
-    border-radius: 10px;
+    background-image: url(/public/img/gradient_obj.png);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     color: var(--black);
-    min-height: 400px; 
+    min-height: 350px; 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
 }
 
 .objetivo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--black);
+    box-shadow: 0 12px 30px var(--black);
 }
 
 .objetivo-card.featured {
@@ -428,77 +435,29 @@
 }
 
 .card-icon {
-    text-align: center;
-    padding: 20px 0 10px;
-    height: auto;
-    flex: 0 0 auto;
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
 }
 
 .card-icon img {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
 .objetivo-card h3 {
-    text-align: center;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
     margin-bottom: 15px;
     color: var(--primary-green);
-    padding: 0 15px;
+    font-weight: 700;
 }
 
-.card-image {
-    flex: 1;
-    overflow: hidden;
-}
-
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.objetivo-card:hover .card-image img {
-    transform: scale(1.05);
-}
-
-.card-content {
-    padding: 20px;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.card-content p {
-    margin-bottom: 10px;
-    line-height: 0.8em;
-    position: relative;
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-}
-
-.benefits-list {
-    list-style-position: inside;
-    padding: 0;
-}
-
-.benefits-list li {
-    padding: 5px 0;
-    padding-left: 28px;
-    position: relative;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-}
-
-.benefits-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;  
-    background-size: contain;
-    background-repeat: no-repeat;
+.objetivo-card p{
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--black);
+  flex-grow: 1;
 }
  
  /* Responsividade  */
@@ -533,61 +492,9 @@
       max-width: 500px;
       margin: 0 auto;
   }
-  
-  .section-header {
-      margin-bottom: 30px;
-  }
-  
-  .objetivo-card {
-      min-height: 300px;
-      max-width: 100%;
-  }
-  
-  .objetivo-card.featured {
-      order: -1; 
-  }
-}
-
-@media (max-width: 576px) {
-  .objetivos-section {
-      padding: 40px 0;
-  }
-  
-  .section-header h2 {
-      font-size: 1.6rem;
-  }
-  
-  .objetivo-card {
-      min-height: 280px;
-  }
-  
-  .card-icon img {
-      width: 40px;
-      height: 40px;
-  }
-  
-  .btn-saiba-mais {
-      padding: 8px 20px;
-  }
-}
-
-/* telas pequenas */
-@media (max-width: 400px) {
-  .section-header h2 {
-      font-size: 1.4rem;
-  }
-  
-  .objetivo-card h3 {
-      font-size: 1.1rem;
-  }
-  
-  .benefits-list li {
-      padding-left: 24px;
-  }
-  
-  .benefits-list li::before {
-      width: 16px;
-      height: 16px;
+  .objetivo-card{
+    min-height: auto;
+    padding: 25px 15px;
   }
 }
 
@@ -608,16 +515,17 @@
  }
  
  .platform-header h2 span {
-     color: #FFC107;
+     color: var(--primary-yellow);
  }
  
  .platform-subtitle {
      color: var(--white);
-     font-size: 1.1rem;
+     font-size: clamp(1rem, 2vw, 1.3rem); 
      max-width: 700px;
      margin: 0 auto;
      text-align: justify;
  }
+ 
  
  .platform-container {
      padding: 0 15px;
@@ -658,11 +566,11 @@
  } 
  
  .card-content2 h3{
-    color: var(--primary-green);
+    color: var(--white);
  }
 
 .title h2 {
-     color: var(--primary-green);
+     color: var(--white);
      position: relative;
      padding-bottom: 15px;
      margin-bottom: 50px;
@@ -679,8 +587,12 @@
      height: 3px;
      background-color: var(--primary-yellow);
    }
+   .platform-header h1{
+    font-style: oblique;
+    font-weight: 600;
+   }
 
-   /* ------------Carossel de img-------------*/
+   /* ------------Carossel de img-------------
 .carousel-gallery {
   padding: 80px 0;
   background-color: var(--sea-green);
@@ -799,7 +711,7 @@
   font-size: 1rem;
 }
 
-/* indicadores */
+/* indicadores 
 .carousel-indicators {
   bottom: 30px;
   margin: 0;
@@ -822,7 +734,7 @@
   border-radius: 6px;
 }
 
-/* controle das imgs */
+/* controle das imgs 
 .carousel-control-prev, .carousel-control-next {
   width: 60px;
   height: 60px;
@@ -856,7 +768,7 @@
   filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
 }
 
-/* Responsividade */
+/* Responsividade 
 @media (max-width: 992px) {
   .image-container {
       height: 400px;
@@ -912,17 +824,18 @@
   }
   
 }
+-------*/
     
    /*----------------Contato ---------------*/
    .contact {
      padding: 80px 0;
-     background-color: var(--primary-green);
+     background-color: var(--sea-green);
    }
    .title h2{
     color: var(--white);
    }
    .title h2 span{
-    color: var(--dark-yellow);
+    color: var(--primary-yellow);
    }
    
    .main_form {
@@ -972,20 +885,23 @@
    /*-----------------Rodape----------------*/
   
 .agro-footer {
-  background-color: var(); 
-  background-image: url(/public/img/menu-fundo3.jpg);
-  color: #ffffff;
+  background-color: var(--black); 
+  background-image: url(/public/img/menu_footr.png);
+  color: var(--white);
   padding: 40px 0 0;
   font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .footer-container {
-  height: 300px;
+  height: auto;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   padding: 0 20px;
 }
 
@@ -1002,7 +918,7 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #FFC107; /* Amarelo */
+  color: var(--dark-yellow); 
 }
 
 .footer-slogan {
@@ -1016,7 +932,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #FFC107; /* Amarelo */
+  color: var(--dark-yellow); 
 }
 
 .footer-links {
@@ -1029,20 +945,36 @@
 }
 
 .footer-links a {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 15px;
+  position: relative;
 }
 
 .footer-links a:hover {
-  color: #FFC107; /* Amarelo */
+  color: #FFC107;
   text-decoration: underline;
+}
+
+.footer-links a::after{
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--dark-yellow);
+  transition: width 0.3 ease;
+}
+.footer-links a:hover::after{
+  width: 100%;
 }
 
 /* Contatos */
 .footer-contact {
   margin-top: 20px;
+  width: 100%;
 }
 
 .contact-info {
@@ -1053,6 +985,8 @@
 
 .contact-info li {
   margin-bottom: 12px;
+  position: relative;
+  padding-left: 0;
 }
 
 .contact-info a {
@@ -1077,24 +1011,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.footer-links a {
-  position: relative;
-}
-
-.footer-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #FFC107;
-  transition: width 0.3s ease;
-}
-
-.footer-links a:hover::after {
-  width: 100%;
-}
 
 .footer-address {
   font-style: normal;
@@ -1108,7 +1024,7 @@
   width: 100%;
   height: 40px;
   padding: 20px 0;
-  margin-top: 40px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -1122,7 +1038,7 @@
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   
   .footer-section {
@@ -1131,6 +1047,23 @@
   
   .footer-contact {
     width: 100%;
+  }
+}
+@media(max-width: 480px){
+  .footer-logo{
+    font-size: 24px;
+  }
+  .footer-title{
+    font-size: 16px;
+  }
+  .footer-links a{
+    font-size: 14px;
+  }
+  .footer-slogan{
+    font-size: 14px;
+  }
+  .footer-address{
+    font-size: 12px;
   }
 }
    
