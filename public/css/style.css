@@ -1096,7 +1096,7 @@
      }
      
      .about .row,
-     .offer_box {
+     .about_box .about_img {
        flex-direction: column;
      }
      
@@ -1105,3 +1105,22 @@
        max-width: 100%;
      }
    }
+   
+  @media (min-width: 576px) {
+    .about .about_box .row{
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    
+    .about .about_box .row{
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .about .about_box .row {
+      max-width: 860px;
+    }
+  }
