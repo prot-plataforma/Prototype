@@ -1,11 +1,29 @@
-/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
-
-
+:root {
+     
+    --primary-green: #2E7D32;    
+    --secondary-green: #4CAF50;  
+    --light-green: #8BC34A;      
+    --lime: #CDDC39;             
+    --primary-yellow:  #7d6608 ;   
+    --dark-yellow: #FBC02D;      
+    --white: #FFFFFF;
+    --black: #212121;
+    --gray: #757575;
+    --light-gray: #BDBDBD;
+    --span-grenn: rgba(145,207,96);
+    --body-green: #49a6;
+    --dark-olive-green: #556B2F;
+    --sea-green:  	#2E8B57;
+    --army-green: #454B1B;
+    
+    
+    --main-font: 'Poppins', sans-serif;
+  }
 /*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     
-    .header-search {
+    .header {
         padding: 15px 0px;
     }
 }
@@ -23,17 +41,17 @@
     .mg {
         margin: 0px 0px;
     }
-    .menu-area-main {
+    .menu-area-main{
         height: 256px;
         overflow-y: auto;
     }
     .megamenu>.row [class*="col-"] {
         padding: 0px;
     }
-    .menu-area-main .megamenu .men-cat {
+    .menu-area-main .megamenu{
         padding: 0px 15px;
     }
-    .menu-area-main .megamenu .women-cat {
+    .menu-area-main .megamenu{
         padding: 0px 15px;
     }
     .menu-area-main .megamenu .el-cat {
@@ -128,55 +146,53 @@
     }
 }
 @media (min-width: 1200px) and (max-width: 1500px) {
-     .banner-main .carousel-caption span {font-size: 40px; line-height: 43px; padding-bottom: 10px;}
+    .banner-main .carousel-caption span {font-size: 40px; line-height: 43px; padding-bottom: 10px;}
    .banner-main .carousel-caption h1 {font-size: 45px; padding-bottom: 20px; line-height: 32px;}
    .banner-main .carousel-caption p {font-size: 19px; padding: 5px 0px 17px 0px; line-height: 25px;}
     .banner-main .carousel-caption .buynow {width: 174px; padding: 7px 0px;}
   .main-menu ul > li a {    padding: 19px 12px;}
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .container {
     max-width: 980px;
 }
-    .main-menu ul > li a {padding: 19px 4px;}
+  .main-menu ul > li a {padding: 19px 4px;}
   .location_icon_bottum_tt ul li {padding: 19px 32px;}
-   .banner-main .carousel-caption span {font-size: 30px; line-height: 33px; padding-bottom: 10px;}
+  .banner-main .carousel-caption span {font-size: 30px; line-height: 33px; padding-bottom: 10px;}
    .banner-main .carousel-caption h1 {font-size: 35px; padding-bottom: 10px; line-height: 22px;}
    .banner-main .carousel-caption p {font-size: 16px; padding: 5px 0px 17px 0px; line-height: 25px;}
-    .banner-main .carousel-caption .buynow {width: 174px; padding: 7px 0;}
-       .for_box_bg .for_box span {font-size: 40px; line-height: 46px;}
-   .about .about_box h2 {font-size: 37px; line-height: 50px;}
+.banner-main .carousel-caption .buynow {width: 174px; padding: 7px 0;}
+    .for_box_bg .for_box span {font-size: 40px; line-height: 46px;}
+   .about .about_box h2 {font-size: 37px; line-height: 37px;}
  .location_icon_bottum {width: 94%; top: 15px;}
 
 
    .for_box_bg .for_box h3 {font-size: 25px;}
-   .testomonial_img::after {background: inherit;}
    .offer .offer-bg .offer_box h3 {font-size: 27px;}
 .cross_inner h3 {padding-bottom: 20px; padding-left: 20px; padding-top: 0px;}
-    .address h3 {width: 176px; font-size: 22px;}
     ul.loca li {font-size: 13px;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .logo {padding-top: 11px;}
-   .location_icon_bottum {width: 88% !important;}
-   .location_icon_bottum ul li {padding: 1px 8px;}
-    .main-menu ul > li a {padding: 18px 0px; font-size: 15px;}
-    .location_icon_bottum_tt ul li {padding: 27px 10px;}
-    .search button {width: 70px;}
-     .last {display: none !important;}
-  .banner-main .carousel-item img {height: 500px;}
-    .banner-main .carousel-caption h1 {font-size: 36px; padding-top: 30px; }
-     .banner-main .carousel-caption span {font-size: 30px; line-height: 19px; padding-bottom: 0px;}
+.logo {padding-top: 11px;}
+.location_icon_bottum {width: 88% !important;}
+.location_icon_bottum ul li {padding: 1px 8px;}
+.main-menu ul > li a {padding: 18px 0px; font-size: 15px;}
+.location_icon_bottum_tt ul li {padding: 27px 10px;}
+.last {display: none !important;}
+.banner-main .carousel-item img {height: 500px;}
+.banner-main .carousel-caption h1 {font-size: 36px; padding-top: 30px; }
+.banner-main .carousel-caption span {font-size: 30px; line-height: 19px; padding-bottom: 0px;}
 .banner-main .carousel-caption h1 {font-size: 35px;  padding-top: 15px; line-height: 40px;}
 .banner-main .carousel-caption p  {font-size: 17px; padding: 10px 0px 20px 0px;}
 .banner-main .carousel-caption .buynow {width: 149px; padding: 7px 0;}
 .about .about_box h2 {font-size: 26px; line-height: 33px;}
+.about{ height: auto;}
 .for_box_bg .for_box span {font-size: 35px; line-height: 40px;}
 .for_box_bg .for_box h3 {font-size: 19px; line-height: 25px;}
 .offer .offer-bg .offer_box h3 {font-size: 20px;}
-ul.social_icon {display: none !important;}
-.testomonial_img::after {background: inherit;}
+ ul.social_icon {display: none !important;}
 .cross_inner h3 {padding-bottom: 20px; padding-left: 20px; padding-top: 0px;}
 
    
@@ -197,13 +213,14 @@ ul.social_icon {display: none !important;}
 .banner-main .carousel-caption p  {font-size: 14px; line-height: 22px; padding: 6px 0px 16px 0px;}
 .banner-main .carousel-caption .buynow {width: 149px; padding: 7px 0;}
 .titlepage h2 {font-size: 42px; }
-.about .about_box_ { margin-bottom: 30px; }
+.about .about_box_ { margin-bottom: 20px; }
+.about_img{ display: none;}
 .margin_ttt {margin-top: 30px;}
 .margin-lkk {margin-top: 30px;}
 .read-more {margin-top: 50px;}
 .testomonial_img::after {background: inherit;}
 .cross_inner h3 {padding-bottom: 20px; padding-left: 20px; padding-top: 0px;}
-.about {background: inherit;}
+.about {background-color: var(--sea-green);}
 .mrgn {margin-top: 0px;}
     .img-box {display: none;}
     ul.link li { padding: 8px 8px;}
@@ -219,9 +236,6 @@ ul.social_icon {display: none !important;}
     .location_icon_bottum {width: 91% !important;
 
 margin-left: 13px;
-
-background: transparent;
-
 }
     .mean-container .mean-bar {margin-bottom: -1px;}
    .ggg {display: none;}
@@ -237,29 +251,27 @@ background: transparent;
 .banner-main .carousel-caption span {font-size: 22px; line-height: 19px;}
 .banner-main .carousel-caption h1 {font-size: 42px; line-height: 40px;}
 .banner-main .carousel-caption p  {display: none;}
+
 .banner-main .carousel-caption .buynow {
 width: 98px;
 padding: 7px 0;
 font-size: 13px;
 margin-right: 9px;
 }
+
 .about .about_box h2 {line-height: 40px; font-size: 28px;   }
 .title h2  {font-size: 30px;}
 .about .about_box span {font-size: 33px; line-height: 53px;}
 .mrgn {margin-top: 30px;}
 .footer .headinga span {font-size: 16px;}
 
-.read-more {margin-top: 50px;}
-.testimonial_cont p {padding: 40px 20px;}
- .testomonial_img::after {background: inherit;}
-   .offer .offer-bg .offer_box h3 {font-size: 27px;}
+.offer .offer-bg .offer_box h3 {font-size: 27px;}
 .about .about_box_ { margin-bottom: 30px; }
-.about .about_box_ span {font-size: 33px; line-height: 53px;}
-.about {background: inherit;}
-.testomonial_section {padding: 0px;}
+.about {background-color: var(--sea-green);}
+.about_img{ display: none;}
 .cross_inner {transform: inherit;}
 .cross_layout {transform: inherit;}
-.testimonial_cont {padding-left: 10px; padding-right: 10px;}
+
 
 .for_box_bg .for_box {margin-bottom: 30px;}
 .offer .offer-bg .offer_box h3 {font-size: 25px;}
