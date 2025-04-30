@@ -52,14 +52,14 @@
    
    h1, h2, h3, h4, h5, h6 {
      color: var(--black);
-     font-weight: 600;
+     font-weight: 700;
      line-height: 1.2;
      margin-bottom: 1rem;
    }
    
-   h1 { font-size: 2.5rem; }
-   h2 { font-size: 2rem; }
-   h3 { font-size: 1.75rem; }
+   h1 { font-size: 1rem; }
+   h2 { font-size: 1rem; }
+   h3 { font-size: 1rem; }
    h4 { font-size: 1.5rem; }
    h5 { font-size: 1.25rem; }
    h6 { font-size: 1rem; }
@@ -282,17 +282,18 @@
     height: 880px;
    }
    
-   .about_box h2 {
+   .about_box h1 {
      color: var(--primary-yellow);
      position: relative;
      padding-bottom: 15px;
      margin-bottom: 30px;
    }
-   .about_box h2 span{
+   .about_box span{
      color: var(--white);
+     font-size: 2rem;
    }
    
-   .about_box h2:after {
+   .about_box h1:after {
      content: '';
      position: absolute;
      bottom: 0;
@@ -356,11 +357,9 @@
     padding: 0 15px;
 }
 
-.section-header h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem); 
-    font-weight: 700;
+.section-header h1 {
     margin-bottom: 15px;
-    color: white;
+    color: var(--primary-yellow);
 }
 
 .section-header h2 span {
@@ -448,17 +447,8 @@
      text-align: center;
      margin-bottom: 40px;
  }
- .platform-header h2 {
-     font-size: 2.3rem;
-     color: var(--white);
-     margin-bottom: 10px;
- }
- 
- .platform-header h2 span {
-     color: var(--primary-yellow);
- }
- 
- .platform-subtitle {
+
+.platform-subtitle {
      color: var(--white);
      font-size: clamp(1rem, 2vw, 1.3rem); 
      max-width: 700px;
@@ -509,15 +499,15 @@
     color: var(--white);
  }
 
-.title h2 {
-     color: var(--white);
+.platform-header h1 {
+     color: var(--primary-yellow);
      position: relative;
      padding-bottom: 15px;
      margin-bottom: 50px;
      text-align: center;
    }
    
-.title h2:after {
+.platform-header h1:after {
      content: '';
      position: absolute;
      bottom: 0;
@@ -525,12 +515,16 @@
      transform: translateX(-50%);
      width: 100px;
      height: 3px;
-     background-color: var(--primary-yellow);
+     background-color: var(--dark-yellow);
    }
-   .platform-header h1{
-    font-style: oblique;
-    font-weight: 600;
-   }
+
+   .platform-header h4 {
+    color: var(--primary-yellow);
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
 
 /* ------------Carossel de img-------------
 .carousel-gallery {
