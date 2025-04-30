@@ -33,13 +33,21 @@ const map = L.map('map').setView([-15, -55], 4);
           });
       });
 
+    
+      const img = document.querySelector('#img');
+    
+    img.addEventListener("click", ()=> {
+        if (georasterLayer) {
+          map.fitBounds(georasterLayer.getBounds());
+        }
+  
+    });
 
-
-    function focusOnImage() {
+    /*function focusOnImage() {
       if (georasterLayer) {
         map.fitBounds(georasterLayer.getBounds());
       }
-    }
+    }*/
 
     // Variable to store the current marker
     let currentMarker = null;
