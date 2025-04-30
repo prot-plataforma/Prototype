@@ -34,7 +34,7 @@ const map = L.map('map').setView([-15, -55], 4);
       });
 
     
-      const img = document.querySelector('#img');
+    const img = document.querySelector('#img');
     
     img.addEventListener("click", ()=> {
         if (georasterLayer) {
