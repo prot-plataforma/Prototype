@@ -7,5 +7,5 @@ function handleCredentialResponse(response) {
     console.log(`user picture ${payload.picture}`)
 
     
-    window.location.href = "http://localhost:5500/home.html"
+    window.location.href = "http://localhost:5500/geotiff.html"
 }
