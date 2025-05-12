@@ -5,13 +5,54 @@ from db import db
 from models import User
 
 app = Flask(__name__)
+app.secret_key = 'geofarm'
+lm = LoginManager(app)
+lm.login_view = 'login'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 db.init_app(app)
 
+@lm.user_loader
+def user_loader(id):
+    user = db.session.query(User).filter_by(id=id).first()
+    return user
+
+
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        email = request.form['emailF']
+        psswrd = request.form['psswdF']
+
+        user = db.session.query(User).filter_by(email=email, psswrd=psswrd).first()
+        if not user:
+            return 'Email ou Senha Incorretos'
+        
+        login_user(user)
+        return redirect(url_for('home'))
+
+
+@app.route('/home')
+@login_required
 def home():
     return render_template('home.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+
+@app.route('/geotiff')
+def geotiff():
+    return render_template('geotiff.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -27,6 +68,8 @@ def register():
         new_user = User(nm=nm, email=email, psswrd=psswrd, cred=cred)
         db.session.add(new_user)
         db.session.commit()
+
+        login_user(new_user)
 
         return redirect(url_for('home'))
 
