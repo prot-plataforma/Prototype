@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from db import db
 from models import User
 from werkzeug.exceptions import HTTPException, NotFound
+import hashlib
 
 app = Flask(__name__)
 app.secret_key = 'geofarm'
@@ -14,6 +15,10 @@ lm.login_view = 'login'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 db.init_app(app)
+
+def Hash(txt):
+    hash_obj = hashlib.sha256(txt.encode('utf-8'))
+    return hash_obj.hexdigest()
 
 @lm.user_loader
 def user_loader(id):
@@ -35,7 +40,7 @@ def login():
         email = request.form['emailF']
         psswrd = request.form['psswdF']
 
-        user = db.session.query(User).filter_by(email=email, psswrd=psswrd).first()
+        user = db.session.query(User).filter_by(email=email, psswrd=hash(psswrd)).first()
 
         if not user:
            return werkzeug.exceptions.NotFound(description='Email ou Senha Invalidos', response=None)
@@ -74,7 +79,7 @@ def register():
         psswrd = request.form['psswdF']
         cred = request.form['credF']
         
-        new_user = User(nm=nm, email=email, psswrd=psswrd, cred=cred)
+        new_user = User(nm=nm, email=email, psswrd=hash(psswrd), cred=cred)
         db.session.add(new_user)
         db.session.commit()
 
