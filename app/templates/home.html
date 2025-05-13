@@ -2,16 +2,106 @@
 <html>
     <head>
         <title>Homepage</title>
+         <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>GeoFarm</title>
+    
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="static/public/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="static/home/home.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="static/public/css/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="static/public/css/jquery.mCustomScrollbar.min.css">
     </head>
     <body>
-        <nav>
-            <ul> <li><button><a href="/logout">Logout </a></button></li>
-        </nav>
-        <h1>Bem vindo a GeoFarm, {{current_user.nm}}!</h1>
-        <div>
-            <ul>
-                <li><a href="/geotiff"> GeoTIFF Interativo por perimetro </a></li>
-            </ul>
+        <header>
+            <!-- header inner -->
+            <div class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
+                            <div class="full">
+                                <div class="center-desk">
+                                    <div class="logo">
+                                        <a href="#"><img src="static/public/img/trator_gif.webp" alt="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h1>Bem vindo a GeoFarm, {{current_user.nm}}!</h1>
+                        <div class="col-md-12 location_icon_bottum">
+                           <div class="row">
+                                <div class="col-md-8 ">
+                                    <div class="menu-area">
+                                        <div class="limit-box">
+                                            <nav class="main-menu">
+                                                <ul class="menu-area-main">                                                               
+                                                    <li><a href="/logout" class="login-btn scale-up-tr-normal">LOGOUT</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header inner -->
+        </header>
+        <!-- end header -->
+        <!-- EXPLORAR  -->
+    <section id="objetivo" class="objetivos-section refined">
+        <div class="container">
+          <div class="section-header">
+            <h1>EXPLORE NOSSA PLATAFORMA</h1>
+            <p class="section-subtitle">
+              Nosso objetivo é transformar dados técnicos e complexos em ferramentas práticas para que o produtor rural possa tomar decisões mais acertadas, reduzir custos, melhorar a produtividade e preservar os recursos naturais. Tudo isso por meio de uma plataforma acessível, justa e fácil de usar.
+            </p>
+          </div>
+          <div class="objetivos-grid">
+            <div class="objetivo-card">
+              <div class="card-icon">
+                <img src="static/public/icon/agriculture.png" alt="Decisões Acertadas" />
+              </div>
+              <h3><a href="/geotiff">GEOTIFF</a></h3>
+              <p>GeoTIFF Interativo por perimetro</p>
+            </div>
+            <div class="objetivo-card">
+              <div class="card-icon">
+                <img src="static/public/icon/industry.png" alt="Redução de Custos" />
+              </div>
+              <h3>Redução de Custos</h3>
+              <p>Otimizamos recursos para diminuir gastos e aumentar a eficiência operacional.</p>
+            </div>
+            <div class="objetivo-card">
+              <div class="card-icon">
+                <img src="static/public/icon/ambiental.png" alt="Preservação Ambiental" />
+              </div>
+              <h3>Preservação Ambiental</h3>
+              <p>Incentivamos práticas sustentáveis para proteger os recursos naturais.</p>
+            </div>
+            <div class="objetivo-card">
+              <div class="card-icon">
+                <img src="static/public/icon/produtividade.png" alt="Produtividade" />
+              </div>
+              <h3>Melhoria da Produtividade</h3>
+              <p>Oferecemos ferramentas que aumentam a produtividade de forma sustentável.</p>
+            </div>
+          </div>
         </div>
+      </section>
+
+    <!-- end offer -->
     </body>
 </html>

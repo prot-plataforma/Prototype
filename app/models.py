@@ -11,7 +11,7 @@ class User(UserMixin, db.Model):
 
     nm = db.Column(db.String(50), unique=True, nullable=False)
 
-    psswrd = db.Column(db.String(), nullable=False)
+    psswrd = db.Column(db.String())
 
     email = db.Column(db.String(120), unique=True)
 

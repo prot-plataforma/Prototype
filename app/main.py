@@ -42,11 +42,12 @@ def login():
 
         user = db.session.query(User).filter_by(email=email, psswrd=hash(psswrd)).first()
 
+        
         if not user:
            return werkzeug.exceptions.NotFound(description='Email ou Senha Invalidos', response=None)
         
+        
         login_user(user)
-
         return redirect(url_for('home'))
 
 
