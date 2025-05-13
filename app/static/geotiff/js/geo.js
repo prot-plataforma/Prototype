@@ -6,7 +6,7 @@ const map = L.map('map').setView([-15, -55], 4);
   
     let georasterLayer, georaster, bounds;
   
-    fetch('geotiff/img/teste.tif')
+    fetch('static/geotiff/img/teste.tif')
       .then(response => response.arrayBuffer())
       .then(arrayBuffer => parseGeoraster(arrayBuffer))
       .then(parsed => {
@@ -25,7 +25,7 @@ const map = L.map('map').setView([-15, -55], 4);
         });
         bounds = [[georasterLayer.getBounds()._southWest.lat, georasterLayer.getBounds()._southWest.lng], [georasterLayer.getBounds()._northEast.lat, georasterLayer.getBounds()._northEast.lng]]
         //georasterLayer.addTo(map);
-        fetch('geotiff/img/teste.png')
+        fetch('static/geotiff/img/teste.png')
           .then(response => response.blob())
           .then(blob => {
             const imageUrl = URL.createObjectURL(blob);
