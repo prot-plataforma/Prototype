@@ -21,87 +21,98 @@
     <link rel="stylesheet" href="static/public/css/jquery.mCustomScrollbar.min.css">
     </head>
     <body>
-        <header>
-            <!-- header inner -->
-            <div class="header">
+      <div class="app">
+          <div class="app-sidebar">
+              <div class="sidebar-top">
+                  <div class="user-profile">
+                      <ion-icon name="person-circle-outline" class="user-icon"></ion-icon>
+                  </div>
+                  <div class="user-detail">
+                      <h4>Bem Vindo!</h4>
+                      <p>{{current_user.nm}}</p>
+                  </div>
+                  <div class="sidebar-toggle-icon">
+                      <ion-icon name="chevron-forward-outline"></ion-icon>
+                  </div>
+              </div>
+              <div class="sidebar-middle">
+                  <p class="main">Main</p>
+                  <ul class="sidebar-items">
+                      <li class="sidebar-item">
+                          <ion-icon class="sidebar-icon" name="home-outline"></ion-icon>
+                          <a class="sidebar-item-text" href="/home">Home</a>
+                      </li>
+                      <li class="sidebar-item">
+                          <ion-icon class="sidebar-icon" name="person-outline"></ion-icon>
+                          <a class="sidebar-item-text" href="#">Profile</a>
+                      </li>
+                      <li class="has-dropdown">
+                          <div class="sidebar-item has-child">
+                              <ion-icon class="sidebar-icon" name="storefront-outline"></ion-icon>
+                              <a class="sidebar-item-text" href="#">Propriedades</a>
+                              <ion-icon class="arrow-icon" name="chevron-forward-outline"></ion-icon>
+                          </div>
+                          <ul class="dropdown">
+                              <li class="dropdown-item">
+                                  <ion-icon class="dropdown-icon" name="balloon-outline"></ion-icon>
+                                  <a href="#">Cadastrar </a>
+                              </li>
+                              <li class="dropdown-item">
+                                  <ion-icon class="dropdown-icon" name="aperture-outline"></ion-icon>
+                                  <a href="#">Excluir</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="sidebar-item">
+                        <ion-icon class="sidebar-icon" name="log-out-outline"></ion-icon>
+                        <a class="sidebar-item-text" href="/logout">Sign out</a>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+          
+              <!-- Main content goes here -->
+              <section id="objetivo" class="objetivos-section refined">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
-                            <div class="full">
-                                <div class="center-desk">
-                                    <div class="logo">
-                                        <a href="#"><img src="static/public/img/trator_gif.webp" alt="#"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div class="section-header">
+                    <h1>EXPLORE NOSSA PLATAFORMA</h1>
+                  </div>
+                  <div class="objetivos-grid">
+                    <div class="objetivo-card">
+                      <div class="card-icon">
+                        <img src="static/public/icon/agriculture.png" alt="Decisões Acertadas" />
+                      </div>
+                      <h3><a href="/geotiff">GEOTIFF</a></h3>
+                      <p>GeoTIFF Interativo por perimetro</p>
                     </div>
-                    <div class="row">
-                        <h1>Bem vindo a GeoFarm, {{current_user.nm}}!</h1>
-                        <div class="col-md-12 location_icon_bottum">
-                           <div class="row">
-                                <div class="col-md-8 ">
-                                    <div class="menu-area">
-                                        <div class="limit-box">
-                                            <nav class="main-menu">
-                                                <ul class="menu-area-main">                                                               
-                                                    <li><a href="/logout" class="login-btn scale-up-tr-normal">LOGOUT</a></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                           </div>
-                        </div>
+                    <div class="objetivo-card">
+                      <div class="card-icon">
+                        <img src="static/public/icon/industry.png" alt="Redução de Custos" />
+                      </div>
+                      <h3><a href="/dados_m">Dados Meteorológicos e Climáticos</a></h3>
+                      <p>Otimizamos recursos para diminuir gastos e aumentar a eficiência operacional.</p>
                     </div>
+                    <div class="objetivo-card">
+                      <div class="card-icon">
+                        <img src="static/public/icon/ambiental.png" alt="Preservação Ambiental" />
+                      </div>
+                      <h3>Monitoramento por Sensoriamento Remoto</h3>
+                      <p>Incentivamos práticas sustentáveis para proteger os recursos naturais.</p>
+                    </div>
+                    <div class="objetivo-card">
+                      <div class="card-icon">
+                        <img src="static/public/icon/produtividade.png" alt="Produtividade" />
+                      </div>
+                      <h3>Melhoria da Produtividade</h3>
+                      <p>Oferecemos ferramentas que aumentam a produtividade de forma sustentável.</p>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <!-- end header inner -->
-        </header>
-        <!-- end header -->
-        <!-- EXPLORAR  -->
-    <section id="objetivo" class="objetivos-section refined">
-        <div class="container">
-          <div class="section-header">
-            <h1>EXPLORE NOSSA PLATAFORMA</h1>
-            <p class="section-subtitle">
-              Nosso objetivo é transformar dados técnicos e complexos em ferramentas práticas para que o produtor rural possa tomar decisões mais acertadas, reduzir custos, melhorar a produtividade e preservar os recursos naturais. Tudo isso por meio de uma plataforma acessível, justa e fácil de usar.
-            </p>
-          </div>
-          <div class="objetivos-grid">
-            <div class="objetivo-card">
-              <div class="card-icon">
-                <img src="static/public/icon/agriculture.png" alt="Decisões Acertadas" />
-              </div>
-              <h3><a href="/geotiff">GEOTIFF</a></h3>
-              <p>GeoTIFF Interativo por perimetro</p>
-            </div>
-            <div class="objetivo-card">
-              <div class="card-icon">
-                <img src="static/public/icon/industry.png" alt="Redução de Custos" />
-              </div>
-              <h3>Redução de Custos</h3>
-              <p>Otimizamos recursos para diminuir gastos e aumentar a eficiência operacional.</p>
-            </div>
-            <div class="objetivo-card">
-              <div class="card-icon">
-                <img src="static/public/icon/ambiental.png" alt="Preservação Ambiental" />
-              </div>
-              <h3>Preservação Ambiental</h3>
-              <p>Incentivamos práticas sustentáveis para proteger os recursos naturais.</p>
-            </div>
-            <div class="objetivo-card">
-              <div class="card-icon">
-                <img src="static/public/icon/produtividade.png" alt="Produtividade" />
-              </div>
-              <h3>Melhoria da Produtividade</h3>
-              <p>Oferecemos ferramentas que aumentam a produtividade de forma sustentável.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <!-- end offer -->
-    </body>
+              </section>
+          
+      </div>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="static/home/home.js"></script>
+  </body>
 </html>
