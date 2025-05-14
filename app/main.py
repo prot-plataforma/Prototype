@@ -16,20 +16,24 @@ lm.login_view = 'login'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 db.init_app(app)
 
+
 def Hash(txt):
     hash_obj = hashlib.sha256(txt.encode('utf-8'))
     return hash_obj.hexdigest()
 
+
+# filtra o user pelo id no bd
 @lm.user_loader
 def user_loader(id):
     user = db.session.query(User).filter_by(id=id).first()
     return user
 
-
+# landing page
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# pagina de login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     
@@ -51,12 +55,14 @@ def login():
         return redirect(url_for('home'))
 
 
+# pagina inicial da plataforma
 @app.route('/home')
 @login_required
 def home():
     return render_template('home.html')
 
 
+# botão de logout
 @app.route('/logout', methods=['GET'])
 @login_required
 def logout():
@@ -64,12 +70,14 @@ def logout():
     return redirect(url_for('login'))
 
 
+# rota para vizualizar o geotiff
 @app.route('/geotiff', methods=['GET'])
 def geotiff():
     if request.method == 'GET':
         return render_template('geotiff.html')
 
 
+# rota para se cadastrar na plataforma
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -89,7 +97,7 @@ def register():
         return redirect(url_for('home'))
 
 
-
+# main
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

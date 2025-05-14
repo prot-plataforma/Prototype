@@ -18,3 +18,7 @@ class User(UserMixin, db.Model):
     cred = db.Column(db.String(11), unique=True)
 
 
+# class Fazendas(db.Model):
+  #  __tablename__ = 'fazendas'
+
+   # id = db.Column(db.Integer, primary_key=True)
