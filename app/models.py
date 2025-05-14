@@ -1,6 +1,7 @@
 from db import db
 from sqlalchemy import Column, Integer, String
 from flask_login import UserMixin
+import mongoengine as me
 
 
 
@@ -17,8 +18,7 @@ class User(UserMixin, db.Model):
 
     cred = db.Column(db.String(11), unique=True)
 
-
-# class Fazendas(db.Model):
-  #  __tablename__ = 'fazendas'
-
-   # id = db.Column(db.Integer, primary_key=True)
+class User(me.Document):
+    id = me.IntField(required=True)
+    
+    

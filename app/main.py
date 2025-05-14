@@ -7,14 +7,22 @@ from db import db
 from models import User
 from werkzeug.exceptions import HTTPException, NotFound
 import hashlib
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+from pymongo import *
+
+
 
 app = Flask(__name__)
 app.secret_key = 'geofarm'
 lm = LoginManager(app)
 lm.login_view = 'login'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
-db.init_app(app)
+#app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+#db.init_app(app)
+
+
+
 
 
 def Hash(txt):
@@ -27,6 +35,8 @@ def Hash(txt):
 def user_loader(id):
     user = db.session.query(User).filter_by(id=id).first()
     return user
+
+
 
 # landing page
 @app.route('/')
