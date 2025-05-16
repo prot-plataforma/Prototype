@@ -1,6 +1,6 @@
-#from flask_sqlalchemy import SQLAlchemy
-from flask_mongoengine import MongoEngine
+from flask_sqlalchemy import SQLAlchemy
+#from flask_mongoengine import MongoEngine
 
-#db = SQLAlchemy()
-db = MongoEngine()
+db = SQLAlchemy()
+#db = MongoEngine()
 
