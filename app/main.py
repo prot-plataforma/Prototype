@@ -84,9 +84,7 @@ def forgot_psswd():
             send_mail()
             flash('Verify your email')
             
-            return redirect(url_for("auth.reset_password_request"))
-        
-    return render_template('auth/reset_password_request.html', title='Reset Password')
+    
 
 
 
