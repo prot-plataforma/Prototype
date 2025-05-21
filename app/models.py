@@ -2,8 +2,8 @@ from db import db
 from sqlalchemy import Column, Integer, String
 from flask_login import UserMixin
 import mongoengine as me
-from itsdangerous import TimedSerializer, URLSafeTimedSerializer 
-from flask import app
+from itsdangerous import TimedSerializer, URLSafeTimedSerializer, BadSignature, SignatureExpired 
+from flask import current_app
 
 
 
@@ -20,22 +20,32 @@ class User(UserMixin, db.Model):
 
     cred = db.Column(db.String(11), unique=True)
 
+    def generate_reset_password_token(self, expires_sec=1800):
+        serializer = URLSafeTimedSerializer(current_app.config["SECRET_KEY"])
+        return serializer.dumps({'user_id': self.id, 'email':self.email})
     
-    #def get_reset_token(self, expired_sec=1800):
-    #   s=TimedSerializer(app.config['SECRET_KEY'], expired_sec)
-    #    return s.dump({'id': self.id}).decode('utf-8')
-    
-    #@staticmethod
-    #def verify_reset_token(token):
-    #    s=TimedSerializer(app.config['SECRET_KEY'])
-    #    try:
-    #        id = s.loads(token)['id']
-    #    except:
-    #        return None
-    #    return User.query.get(id) 
-       
+    @staticmethod
+    def validate_reset_password_token(token: str, user_id:int):
+        user = db.session.get(User, user_id)
 
-#class User(me.Document):
- #   id = me.IntField(required=True)
+        if user is None:
+            return None
+        serializer = URLSafeTimedSerializer(current_app.config["SECRET_KEY"])
+        try:
+            data = serializer.loads(token, max_age=1800)
+        except (BadSignature, SignatureExpired):
+            return None
+
+        if data.get('user_id') != user_id:
+
+            return None
+        
+        user = db.session.get(User, user_id)
+        if user and user.email == data.get('email'):
+            return user
+
+        return None 
+
     
+
     

@@ -1,31 +1,68 @@
-from flask import Flask, render_template, request, url_for, redirect, abort, flash
+from flask import Flask, render_template, request, url_for, redirect, abort, flash, render_template_string
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import werkzeug
 import werkzeug.exceptions
 from werkzeug.security import generate_password_hash, check_password_hash
 from db import db
+from sqlalchemy import select
 from models import User
 from werkzeug.exceptions import HTTPException, NotFound
 import hashlib
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
-from pymongo import *
 from flask_mail import Message, Mail
+#from flask_mailman import EmailMessage
+from flask_login import current_user, confirm_login, login_user
+from forms import ResetPsswrdRequestForm, ResetPasswordForm
+from templates.auth.reset_password_email_content import (
+    reset_password_email_html_content
+)
+from dotenv import load_dotenv
+import os
+
 
 
 
 
 app = Flask(__name__)
-app.secret_key = 'geofarm'
+app.config['SECRET_KEY'] = 'geofarm'
 lm = LoginManager(app)
 lm.login_view = 'login'
+
+
+load_dotenv()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 db.init_app(app)
 
+# email config - verificar o numero de telefone na conta 
+mail_settings = {
+    "MAIL_SERVER": os.getenv('MAIL_SERVER'),
+    "MAIL_PORT": 465,
+    "MAIL_USE_TLS": False,
+    "MAIL_USE_SSL": True,
+    "MAIL_USERNAME": os.getenv('MAIL_USERNAME'),
+    "MAIL_PASSWORD": os.getenv('MAIL_PASSWORD')
 
+}
 
+app.config.update(mail_settings)
+mail = Mail(app)
 
+def send_mail(user):
+    reset_psswrd_url = url_for("reset_password",
+                               token=user.generate_reset_password_token(),
+                               user_id=user.id,
+                               _external=True,
+                               )
+    email_body=render_template_string(
+        reset_password_email_html_content, reset_psswrd_url=reset_psswrd_url
+    ) 
+    message = Message(
+        subject="Reset your Password",
+        recipients=[user.email],
+        html=email_body
+    )
+    message.content_subtype = "html"
+    mail.send(message)
 
 def Hash(txt):
     hash_obj = hashlib.sha256(txt.encode('utf-8'))
@@ -56,7 +93,7 @@ def login():
         email = request.form['emailF']
         psswrd = request.form['psswdF']
 
-        user = db.session.query(User).filter_by(email=email, psswrd=hash(psswrd)).first()
+        user = db.session.query(User).filter_by(email=email, psswrd=Hash(psswrd)).first()
         error = 'Invalid credentials'     
         
         if not user:
@@ -67,24 +104,61 @@ def login():
         login_user(user)
         return redirect(url_for('home'))
 
-def send_mail(user):
-    reset_psswrd_url = url_for("auth.reset") 
-
 
 # rota para recuperar a senha 
-@app.route('/forgot_password', methods=['GET', 'POST'])
-def forgot_psswd():
-    if request.method == 'GET':
-        return render_template('forgot_psswd.html', title='Reset Request')
-    elif request.method == 'POST':    
-        email = request.form['emailF']
-
-        user = User.query.filter_by(email=email).first()
-        if user:
-            send_mail()
-            flash('Verify your email')
-            
+@app.route('/reset_password', methods=['GET', 'POST'])
+def reset_psswrd_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     
+    form = ResetPsswrdRequestForm()
+
+    if form.validate_on_submit():
+        user_select = select(User).where(User.email == form.email.data)
+        user = db.session.scalar(user_select)
+
+        if user:
+            send_mail(user)
+
+            flash(
+                "Instructions to reset your password were sent to your email address,"
+            " if it exists in our system."
+            )
+
+            return redirect(url_for("login"))
+        
+        else:
+           flash("You are not register, go back and create an account!")
+           
+        
+    return render_template(
+        "auth/reset_password_request.html", title="Reset Password", form=form
+    )   
+          
+# rota de token para recuperar senha            
+@app.route('/reset_password/<token>/<int:user_id>', methods=['GET', 'POST'])
+def reset_password(token, user_id):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    
+    user = User.validate_reset_password_token(token, user_id)
+    if not user:
+        return render_template(
+            "auth/reset_password_error.html", title="Reset Password Error"
+        )
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        user.set_password(form.password.data)
+        db.session.commit()
+
+        return render_template(
+            "auth/reset_password_success.html", title="Reset Password Succes"
+        )
+    return render_template(
+        "auth/reset_password.html", title="Reset Password", form=form
+    )
+
+
 
 
 
@@ -121,7 +195,7 @@ def register():
         psswrd = request.form['psswdF']
         cred = request.form['credF']
         
-        new_user = User(nm=nm, email=email, psswrd=hash(psswrd), cred=cred)
+        new_user = User(nm=nm, email=email, psswrd=Hash(psswrd), cred=cred)
         db.session.add(new_user)
         db.session.commit()
 
@@ -129,18 +203,7 @@ def register():
 
         return redirect(url_for('home'))
 
-#send_reset_email
-#def send_reset_email(user):
-#    token = user.get_reset_token()
-#   msg = Message('Password Reset Request',
-#                 sender=app.config['MAIL_USERNAME'],
-#                recipients=[user.email])
-#    msg.body = f"""To reset your password follow this link:
-#{url_for('users.reset', token=token, _external=True)}
 
-# If you ignore this email no changes will be made
-#"""
-#    Mail.send(msg)
         
             
 
