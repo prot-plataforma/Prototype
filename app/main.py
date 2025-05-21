@@ -23,7 +23,7 @@ import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'geofarm'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 lm = LoginManager(app)
 lm.login_view = 'login'
 
