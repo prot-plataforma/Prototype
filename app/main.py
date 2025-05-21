@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect, abort, flash, render_template_string
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
-import werkzeug
-import werkzeug.exceptions
 from werkzeug.security import generate_password_hash, check_password_hash
 from db import db
 from sqlalchemy import select
@@ -47,6 +45,7 @@ mail_settings = {
 app.config.update(mail_settings)
 mail = Mail(app)
 
+# envia email de recuperação de senha
 def send_mail(user):
     reset_psswrd_url = url_for("reset_password",
                                token=user.generate_reset_password_token(),
@@ -64,6 +63,7 @@ def send_mail(user):
     message.content_subtype = "html"
     mail.send(message)
 
+# transforma a senha em hash
 def Hash(txt):
     hash_obj = hashlib.sha256(txt.encode('utf-8'))
     return hash_obj.hexdigest()
@@ -97,8 +97,8 @@ def login():
         error = 'Invalid credentials'     
         
         if not user:
-           flash(error)
-           return redirect(url_for(login))     
+           return error
+                
         
         
         login_user(user)
@@ -159,9 +159,6 @@ def reset_password(token, user_id):
     )
 
 
-
-
-
 # pagina inicial da plataforma
 @app.route('/home')
 @login_required
@@ -193,7 +190,19 @@ def register():
         nm = request.form['nomeF']
         email = request.form['emailF']
         psswrd = request.form['psswdF']
+        psswrd2 = request.form['psswdF2'] 
         cred = request.form['credF']
+
+        if psswrd2 != psswrd:
+            flash("senhas diferentes")
+            return redirect(url_for('register'))
+            
+        
+        existing_user = User.query.filter_by(email=email).first()
+        if existing_user:
+            flash("Email já cadastrado. Faça Login.")
+            return redirect(url_for('register'))
+            
         
         new_user = User(nm=nm, email=email, psswrd=Hash(psswrd), cred=cred)
         db.session.add(new_user)
