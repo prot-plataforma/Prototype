@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, url_for, redirect, abort, flash, render_template_string
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from db import db
 from sqlalchemy import select
 from models import User
-from werkzeug.exceptions import HTTPException, NotFound
 import hashlib
 from flask_mail import Message, Mail
 #from flask_mailman import EmailMessage
@@ -15,8 +13,6 @@ from templates.auth.reset_password_email_content import (
 )
 from dotenv import load_dotenv
 import os
-
-
 
 
 
@@ -96,12 +92,11 @@ def login():
         user = db.session.query(User).filter_by(email=email, psswrd=Hash(psswrd)).first()
         error = 'Invalid credentials'     
         
-        if not user:
-           return error
-                
+        if user != user:
+            return error
         
         
-        login_user(user)
+        user_loader(user)
         return redirect(url_for('home'))
 
 
@@ -219,12 +214,20 @@ def profile():
     if current_user.is_authenticated:
         return render_template('profile.html')
     
-    profile = request.args.get('personal_info')
-    return render_template('profile.html', profile=profile)
+    if request.method == 'GET':
+        profile = request.args.get('profile', 'info')
+        return render_template('profile.html', profile=profile)
+
+
+# rota para propriedades
+@app.route('/propriedades', methods=['GET'])
+def prop():
+    if request.method == 'GET':
+        return render_template('propriedades.html')
+#    elif request.method == 'POST':
 
       
             
-
 # main
 if __name__ == '__main__':
     with app.app_context():
