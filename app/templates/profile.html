@@ -7,15 +7,12 @@
 
   </head>
   <body>
-    {% if profile == 'info' %}
-            <h1>Bem-vindo à Info</h1>
-    {% endif %}        
     <div class="body">
       <div class="container">
         <div class="account-options">
             <div class="personal-info">
                 <div class="title-description-9">
-                  <div class="text-wrapper-2" id="personal_info"><a href="/profile=info">Personal info</a></div>
+                  <div class="text-wrapper-2" id="personal_info"><a href="{{url_for('profile', profile='info')}}">Personal info</a></div>
                   <p class="text-wrapper-10">Detalhes de infomações pessoais: Nome, Email (editar email), Senha, CPF/CNPJ, Tipo de usuario - (qual o ramo?)</p>
                 </div>
                 <ion-icon name="person-circle-outline"></ion-icon>
