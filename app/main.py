@@ -213,7 +213,16 @@ def register():
         return redirect(url_for('home'))
 
 
-        
+# rota para perfil
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    if current_user.is_authenticated:
+        return render_template('profile.html')
+    
+    profile = request.args.get('personal_info')
+    return render_template('profile.html', profile=profile)
+
+      
             
 
 # main

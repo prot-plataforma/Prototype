@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/home/profile.css" />
+
+  </head>
+  <body>
+    <div class="body">
+      <div class="container">
+        <div class="account-options">
+            <div class="personal-info">
+                <div class="title-description-9">
+                  <div class="text-wrapper-2" id="personal_info"><a href="/personal_info">Personal info</a></div>
+                  <p class="text-wrapper-10">Detalhes de infomações pessoais: Nome, Email (editar email), Senha, CPF/CNPJ, Tipo de usuario - (qual o ramo?)</p>
+                </div>
+                <ion-icon name="person-circle-outline"></ion-icon>
+              </div>
+          <div class="professional-hosting">
+            <div class="title-description-2">
+              <div class="text-wrapper-2">Propriedades Info</div>
+              <p class="text-wrapper-3">Informações de propriedades (atualizar, cadastrar, editar, excluir)</p>
+            </div>
+            <ion-icon name="storefront-outline"></ion-icon>
+          </div>
+          <div class="privacy-sharing">
+            <div class="title-description-5">
+              <div class="text-wrapper-2">Privacy &amp; sharing</div>
+              <p class="text-wrapper-6">Gerenciar dados pessoais, compartilhar dados da fazenda</p>
+            </div>
+            <ion-icon name="lock-open-outline"></ion-icon>
+          </div>
+          <div class="payments-payouts">
+            <div class="title-description-8">
+              <div class="text-wrapper-2">Payments &amp; payouts</div>
+              <p class="text-wrapper-9">Revisar o pagamento, visualizar o que foi pago e monitorar proximos pagamentos</p>
+            </div>
+            <ion-icon name="cash-outline"></ion-icon>
+          </div>
+          <div class="login-security">
+            <div class="title-description-5">
+              <div class="text-wrapper-2">Login &amp; security</div>
+              <p class="text-wrapper-6">Atualizar senha e segurança da conta</p>
+            </div>
+            <ion-icon name="key-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="account-information">
+          <div class="text-wrapper-11">Account</div>
+          <p class="peter-griffin-hello">
+            <span class="span">{{current_user.nm}}, </span>
+            <span class="text-wrapper-13"><a href="/home">Go to Home</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
