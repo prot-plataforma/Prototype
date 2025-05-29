@@ -11,6 +11,7 @@
     <!-- site metas -->
     <title>GeoFarm</title>
     
+  
     <!-- bootstrap css -->
     <link rel="stylesheet" href="static/public/css/bootstrap.min.css">
     <!-- style css -->
@@ -27,7 +28,7 @@
     <!-- header -->
     <header>
         <!-- header inner -->
-        <div class="header">
+        <div class="header" id="header">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
@@ -181,7 +182,7 @@
         <div class="container">
           <div class="section-header">
             <h1>OBJETIVO</h1>
-            <p class="section-subtitle">
+            <p class="section-subtitle" >
               Nosso objetivo é transformar dados técnicos e complexos em ferramentas práticas para que o produtor rural possa tomar decisões mais acertadas, reduzir custos, melhorar a produtividade e preservar os recursos naturais. Tudo isso por meio de uma plataforma acessível, justa e fácil de usar.
             </p>
           </div>
@@ -397,33 +398,17 @@
     <!-- end footer -->
     
     <!-- Javascript files-->
+    <script src="static/public/js/jquery.validate.js"></script>
+    <script src="static/public/js/plugin.js"></script>
     <script src="static/public/js/jquery.min.js"></script>
     <script src="static/public/js/popper.min.js"></script>
     <script src="static/public/js/bootstrap.bundle.min.js"></script>
     <script src="static/public/js/jquery-3.0.0.min.js"></script>
-    <script src="static/public/js/plugin.js"></script>
     <!-- sidebar -->
     <script src="static/public/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="static/public/js/custom.js"></script>
     <!-- javascript -->
-    <script src="static/public/js/owl.carousel.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
-
-            $(".zoom").hover(function() {
-
-                $(this).addClass('transition');
-            }, function() {
-
-                $(this).removeClass('transition');
-            });
-        });
-    </script>
 </body>
 
 </html>
