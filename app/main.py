@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, abort, flash, render_template_string
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+import folium.plugins
+import folium.plugins.fullscreen
 from db import db
 from sqlalchemy import select
 from models import User
@@ -13,6 +15,7 @@ from templates.auth.reset_password_email_content import (
 )
 from dotenv import load_dotenv
 import os
+import folium
 
 
 
@@ -40,6 +43,41 @@ mail_settings = {
 
 app.config.update(mail_settings)
 mail = Mail(app)
+
+# teste mapa
+@app.route('/mapa')
+def rendermap():
+    start_coords = (-30.17,-53.50)
+    m = folium.Map()
+
+    m.get_root().render()
+    header = m.get_root().header.render()
+    body_html = m.get_root().html.render()
+    script = m.get_root().script.render()
+
+    return render_template_string(
+        """
+        <!DOCTYPE html>
+            <html>
+                <head>
+                    {{ header|safe }}
+                </head>
+                <body>
+                    <h1>Using components</h1>
+                    {{ body_html|safe }}
+                    <script>
+                        {{ script|safe }}
+                    </script>
+                </body>
+            </html>
+
+        """,
+        header=header,
+        body_html=body_html,
+        script=script
+    )
+
+
 
 # envia email de recuperação de senha
 def send_mail(user):
